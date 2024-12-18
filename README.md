@@ -65,7 +65,16 @@ All of the files above should locate in the same directory.
 3. Run the pipeline. Adjust your file names and paths accordingly with `<>`. In other words, edit the content between `<>` and remove `<>`. Importantly, the quotes (`' or "`) are necessary.
     
     ```
-    nextflow run bigbio/quantms -r dev --input '<sdrf>.tsv' --outdir 'results' --database '<Organism Proteome>.fasta' -profile docker --root_folder <root directory of your folder> --local_input_type raw --add_decoys true --max_memory 8GB --max_cpus 4 --platform linux/amd64
+    nextflow run bigbio/quantms -r dev \
+     --input '<sdrf>.tsv' \
+     --outdir 'results' '
+     --database '<Organism Proteome>.fasta' \
+     -profile docker \
+     --root_folder <root directory of your folder> \
+     --local_input_type raw -\
+     -add_decoys true \
+     --max_memory 8GB --max_cpus 4 \
+     --platform linux/amd64
     ```
     One can adjust the memory usage by changing the `--max_memory` parameter. It's recommended to use as much memory as possible but not all of it.
 4. The pipeline will run and generate the results in the `results` folder and the intermediate file in `work`. It will take a while to run around an hour. If it crashes, you can resume the pipeline by running the same command and add `-resume`.
