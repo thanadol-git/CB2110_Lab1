@@ -67,7 +67,7 @@ All of the files above should locate in the same directory.
     ```
     nextflow run bigbio/quantms -r dev \
      --input '<sdrf>.tsv' \
-     --outdir 'results' '
+     --outdir 'results' \
      --database '<Organism Proteome>.fasta' \
      -profile docker \
      --root_folder <root directory of your folder> \
